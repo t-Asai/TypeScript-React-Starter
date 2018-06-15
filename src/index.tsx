@@ -6,10 +6,11 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import { enthusiasm } from './reducers/index';
 import { StoreState } from './types/index';
+import { EnthusiasmAction } from './actions';
 
 import './index.css';
 
-const store = createStore(enthusiasm, {
+const store = createStore<StoreState, EnthusiasmAction, number, string>(enthusiasm, {
   enthusiasmLevel: 1,
   languageName: 'TypeScript',
 });
