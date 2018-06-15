@@ -1,14 +1,14 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
-import Hello from './containers/Hello';
+import Hello from '~/containers/Hello';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import { enthusiasm } from './reducers/index';
-import { StoreState } from './types/index';
-import { EnthusiasmAction } from './actions';
+import { enthusiasm } from '~/reducers/index';
+import { StoreState } from '~/types/index';
+import { EnthusiasmAction } from '~/actions';
 
-import './index.css';
+import '~/index.css';
 
 const store = createStore<StoreState, EnthusiasmAction, number, string>(enthusiasm, {
   enthusiasmLevel: 1,
