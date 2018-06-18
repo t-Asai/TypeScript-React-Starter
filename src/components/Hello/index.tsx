@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 import './Hello.css';
 
 export interface Props {
@@ -15,6 +16,9 @@ function Hello({ name, enthusiasmLevel = 1, onIncrement, onDecrement }: Props) {
 
   return (
     <div className="hello">
+      <Link to="/">TOP</Link>
+
+      <Link to="home">HOMEへ</Link>
       <div className="greeting">
         Hello {name + getExclamationMarks(enthusiasmLevel)}
       </div>
