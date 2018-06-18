@@ -1,4 +1,4 @@
-import Hello from '~/components/Hello';
+import Hello from '~/components/Hello/index';
 import * as actions from '~/actions/';
 import { StoreState } from '~/types/index';
 import { connect, Dispatch } from 'react-redux';
