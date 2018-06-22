@@ -1,6 +1,13 @@
+import * as React from 'react';
 import Top from '~/containers/Top';
 import Hello from '~/containers/Hello';
 import SeeYou from '~/containers/SeeYou';
+
+const NotFound = () => (
+  <div>
+    <h1>Sorry, can’t find that.</h1>
+  </div>
+);
 
 const routes = [
   {
@@ -17,6 +24,10 @@ const routes = [
     path: '/seeyou',
     exact: true,
     component: SeeYou,
+  },
+  {
+    path: '/',
+    component: NotFound
   }
 ];
 
