@@ -1,6 +1,5 @@
 import * as React from "react";
 import { ConnectSideBar } from "~/hoc/SideBar";
-import "./Hello.css";
 
 export interface Props {
   name: string;

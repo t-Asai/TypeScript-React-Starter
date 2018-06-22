@@ -1,10 +1,10 @@
 import * as React from "react";
 import { ConnectSideBar } from "~/hoc/SideBar";
-import "./SeeYou.css";
+import { H1 } from "./StyleSeeYou";
 
 const SeeYou = () => (
-  <div className="seeyou">
-    <h1>seeyou</h1>
+  <div>
+    <H1>seeyou</H1>
     seeyou
   </div>
 );

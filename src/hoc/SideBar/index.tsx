@@ -1,6 +1,11 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
-import "./SideBar.css";
+import {
+  StyleLinkList,
+  StyleSideBar,
+  StyleComposedComponent,
+  StyleComposedComponentBuff
+} from "./StyleSideBar";
 import routes from "~/routes";
 
 const SideBar = (): any => {
@@ -16,19 +21,7 @@ const SideBar = (): any => {
     }
   });
 
-  return (
-    <div style={{ display: "flex" }}>
-      <div
-        style={{
-          padding: "10px",
-          width: "40%",
-          background: "#f0f0f0"
-        }}
-      >
-        <ul>{listItems}</ul>
-      </div>
-    </div>
-  );
+  return <StyleLinkList>{listItems}</StyleLinkList>;
 };
 
 export const ConnectSideBar = (ComposedComponent: any) =>
@@ -36,8 +29,14 @@ export const ConnectSideBar = (ComposedComponent: any) =>
     render() {
       return (
         <div>
-          <SideBar />
-          <ComposedComponent {...this.props} {...this.state} />
+          <StyleSideBar>
+            <SideBar />
+          </StyleSideBar>
+          <StyleComposedComponentBuff>
+            <StyleComposedComponent>
+              <ComposedComponent {...this.props} {...this.state} />
+            </StyleComposedComponent>
+          </StyleComposedComponentBuff>
         </div>
       );
     }
