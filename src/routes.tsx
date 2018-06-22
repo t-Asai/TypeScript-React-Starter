@@ -1,7 +1,7 @@
-import * as React from 'react';
-import Top from '~/containers/Top';
-import Hello from '~/containers/Hello';
-import SeeYou from '~/containers/SeeYou';
+import * as React from "react";
+import Top from "~/containers/Top";
+import Hello from "~/containers/Hello";
+import SeeYou from "~/containers/SeeYou";
 
 const NotFound = () => (
   <div>
@@ -11,22 +11,29 @@ const NotFound = () => (
 
 const routes = [
   {
-    path: '/',
+    path: "/",
+    name: "top",
     exact: true,
+    sidebar: () => <div>home!</div>,
     component: Top
   },
   {
-    path: '/hello',
+    path: "/hello",
+    name: "hello",
     exact: true,
+    sidebar: () => <div>home!</div>,
     component: Hello
   },
   {
-    path: '/seeyou',
+    path: "/seeyou",
+    name: "seeyou",
     exact: true,
-    component: SeeYou,
+    sidebar: () => <div>home!</div>,
+    component: SeeYou
   },
   {
-    path: '/',
+    path: "*",
+    sidebar: () => <div>home!</div>,
     component: NotFound
   }
 ];

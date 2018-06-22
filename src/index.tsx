@@ -10,7 +10,7 @@ import { StoreState } from '~/types/index';
 import { EnthusiasmAction } from '~/actions';
 
 import '~/index.css';
-import routes from './routes';
+import routes from '~/routes';
 
 const store = createStore<StoreState, EnthusiasmAction, number, string>(enthusiasm, {
   enthusiasmLevel: 1,
