@@ -1,10 +1,7 @@
-import * as React from 'react';
-import './Top.css';
+import * as React from "react";
+import { ConnectSideBar } from "~/hoc/SideBar";
+import "./Top.css";
 
-const Top = () => (
-  <div>
-    これトップページ
-  </div>
-);
+const Top = () => <div>これトップページ</div>;
 
-export default Top;
+export default ConnectSideBar(Top);

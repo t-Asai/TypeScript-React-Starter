@@ -1,3 +1,14 @@
-import Top from '~/components/Top/index';
+import Top from "~/components/Top";
+import * as actions from "~/actions";
+import { connect, Dispatch } from "react-redux";
 
-export default Top;
+export const mapStateToProps = () => ({});
+
+export const mapDispatchToProps = (
+  dispatch: Dispatch<actions.EnthusiasmAction>
+) => ({});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Top);
