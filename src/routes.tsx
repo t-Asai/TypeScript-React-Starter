@@ -14,26 +14,22 @@ const routes = [
     path: "/",
     name: "top",
     exact: true,
-    sidebar: () => <div>home!</div>,
     component: Top
   },
   {
     path: "/hello",
     name: "hello",
     exact: true,
-    sidebar: () => <div>home!</div>,
     component: Hello
   },
   {
     path: "/seeyou",
     name: "seeyou",
     exact: true,
-    sidebar: () => <div>home!</div>,
     component: SeeYou
   },
   {
     path: "*",
-    sidebar: () => <div>home!</div>,
     component: NotFound
   }
 ];

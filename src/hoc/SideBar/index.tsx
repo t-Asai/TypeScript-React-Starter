@@ -34,11 +34,10 @@ const SideBar = (): any => {
 export const ConnectSideBar = (ComposedComponent: any) =>
   class extends React.Component {
     render() {
-      // 引数で受け取った ComposedComponent に props を渡して返す
       return (
         <div>
           <SideBar />
-          <ComposedComponent />
+          <ComposedComponent {...this.props} {...this.state} />
         </div>
       );
     }

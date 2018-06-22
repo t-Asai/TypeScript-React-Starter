@@ -1,6 +1,6 @@
-import * as React from 'react';
-import { Link } from 'react-router-dom';
-import './Hello.css';
+import * as React from "react";
+import { ConnectSideBar } from "~/hoc/SideBar";
+import "./Hello.css";
 
 export interface Props {
   name: string;
@@ -9,16 +9,21 @@ export interface Props {
   onDecrement?: () => void;
 }
 
-function Hello({ name, enthusiasmLevel = 1, onIncrement, onDecrement }: Props) {
+// helpers
+const getExclamationMarks = (numChars: number) => Array(numChars + 1).join("!");
+
+const Hello = ({
+  name,
+  enthusiasmLevel = 1,
+  onIncrement,
+  onDecrement
+}: Props) => {
   if (enthusiasmLevel <= 0) {
-    throw new Error('You could be a little more enthusiastic. :D');
+    throw new Error("You could be a little more enthusiastic. :D");
   }
 
   return (
     <div className="hello">
-      <Link to="/">TOP</Link>
-
-      <Link to="home">HOMEへ</Link>
       <div className="greeting">
         Hello {name + getExclamationMarks(enthusiasmLevel)}
       </div>
@@ -28,12 +33,6 @@ function Hello({ name, enthusiasmLevel = 1, onIncrement, onDecrement }: Props) {
       </div>
     </div>
   );
-}
+};
 
-export default Hello;
-
-// helpers
-
-function getExclamationMarks(numChars: number) {
-  return Array(numChars + 1).join('!');
-}
+export default ConnectSideBar(Hello);
