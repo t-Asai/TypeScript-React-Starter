@@ -1,20 +1,40 @@
-import { handleActions } from "redux-actions";
+import { handleActions, Action } from "redux-actions";
 import { combineReducers } from "redux";
 import * as actions from "~/actions/Hello";
+import { HelloState } from "~/types/hello";
 
-const initialState: { enthusiasmLevel: number; languageName: string } = {
-  enthusiasmLevel: 0,
-  languageName: "anonimous"
+const initialState: HelloState = {
+  hello: {
+    enthusiasm: 0,
+    name: "anonimous"
+  }
 };
 
-const enthusiasm = handleActions(
+const enthusiasm = handleActions<HelloState["hello"]["enthusiasm"]>(
   {
-    [actions.INCREMENT_ENTHUSIASM]: (state, {}) => state + 1,
-    [actions.DECREMENT_ENTHUSIASM]: (state, {}) => state - 1
+    [actions.INCREMENT_ENTHUSIASM]: (
+      state,
+      {  }: Action<HelloState["hello"]["enthusiasm"]>
+    ) => state + 1,
+    [actions.DECREMENT_ENTHUSIASM]: (
+      state,
+      {  }: Action<HelloState["hello"]["enthusiasm"]>
+    ) => (state - 1 < 0 ? 0 : state - 1)
   },
-  initialState.enthusiasmLevel
+  initialState.hello.enthusiasm
+);
+
+const name = handleActions(
+  {
+    [actions.UPDATE_NAME]: (
+      state,
+      { payload }: Action<HelloState["hello"]["name"]>
+    ) => payload
+  },
+  initialState.hello.name
 );
 
 export default combineReducers({
-  enthusiasm
+  enthusiasm,
+  name
 });

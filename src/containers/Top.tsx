@@ -1,5 +1,5 @@
-import Top from "~/components/Top";
 import { connect, Dispatch } from "react-redux";
+import Top from "~/components/Top";
 
 export const mapStateToProps = () => ({});
 

@@ -1,5 +1,6 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
+import routes from "~/routes";
 import {
   StyleLinkList,
   StyleSideBar,
@@ -7,7 +8,6 @@ import {
   StyleComposedComponent,
   StyleComposedComponentBuff
 } from "./StyleSideBar";
-import routes from "~/routes";
 
 const SideBar = (): any => {
   const listItems = routes.map(route => {

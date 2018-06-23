@@ -1,5 +1,5 @@
-import SeeYou from "~/components/SeeYou";
 import { connect, Dispatch } from "react-redux";
+import SeeYou from "~/components/SeeYou";
 
 export const mapStateToProps = () => ({});
 

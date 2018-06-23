@@ -1,16 +1,16 @@
-import Hello from "~/components/Hello";
-import { actions } from "~/actions";
+import { bindActionCreators } from "redux";
 import { connect, Dispatch } from "react-redux";
+import Hello from "~/components/Hello";
+import actions, { EnthusiasmAction } from "~/actions/Hello";
+import { HelloState } from "~/types/hello";
 
-const mapStateToProps = (state: any, props: any) => ({
-  enthusiasmLevel: state.hello.enthusiasm,
+const mapStateToProps = (state: HelloState) => ({
+  enthusiasm: state.hello.enthusiasm,
   name: state.hello.name
 });
 
-export const mapDispatchToProps = (dispatch: any) => ({
-  onIncrement: () => dispatch(actions.HelloActions.incrementEnthusiasm()),
-  onDecrement: () => dispatch(actions.HelloActions.decrementEnthusiasm())
-});
+const mapDispatchToProps = (dispatch: Dispatch<EnthusiasmAction>) =>
+  bindActionCreators({ ...actions }, dispatch);
 
 export default connect(
   mapStateToProps,
