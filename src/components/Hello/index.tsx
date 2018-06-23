@@ -12,15 +12,11 @@ export interface Props {
 const getExclamationMarks = (numChars: number) => Array(numChars + 1).join("!");
 
 const Hello = ({
-  name,
+  name = "anonimous",
   enthusiasmLevel = 1,
   onIncrement,
   onDecrement
 }: Props) => {
-  if (enthusiasmLevel <= 0) {
-    throw new Error("You could be a little more enthusiastic. :D");
-  }
-
   return (
     <div className="hello">
       <div className="greeting">
