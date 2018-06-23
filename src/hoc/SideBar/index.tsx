@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import {
   StyleLinkList,
   StyleSideBar,
+  StyleSideBarBuff,
   StyleComposedComponent,
   StyleComposedComponentBuff
 } from "./StyleSideBar";
@@ -29,9 +30,11 @@ export const ConnectSideBar = (ComposedComponent: any) =>
     render() {
       return (
         <div>
-          <StyleSideBar>
-            <SideBar />
-          </StyleSideBar>
+          <StyleSideBarBuff>
+            <StyleSideBar>
+              <SideBar />
+            </StyleSideBar>
+          </StyleSideBarBuff>
           <StyleComposedComponentBuff>
             <StyleComposedComponent>
               <ComposedComponent {...this.props} {...this.state} />
