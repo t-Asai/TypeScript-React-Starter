@@ -19,10 +19,8 @@ const Hello = ({
   decrementEnthusiasm,
   updateName
 }: Props) => (
-  <div className="hello">
-    <div className="greeting">
-      Hello {`${name}${getExclamationMarks(enthusiasm)}`}
-    </div>
+  <div>
+    <div>Hello {`${name}${getExclamationMarks(enthusiasm)}`}</div>
     <div>
       <button onClick={decrementEnthusiasm}>-</button>
       <button onClick={incrementEnthusiasm}>+</button>

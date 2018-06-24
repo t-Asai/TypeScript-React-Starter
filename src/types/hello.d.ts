@@ -1,6 +1,5 @@
-export interface HelloState {
+export type HelloState = {
   hello: {
-    name: string;
     enthusiasm: number;
   };
-}
+};

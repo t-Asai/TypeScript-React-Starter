@@ -5,8 +5,7 @@ import { HelloState } from "~/types/hello";
 
 const initialState: HelloState = {
   hello: {
-    enthusiasm: 0,
-    name: "anonimous"
+    enthusiasm: 0
   }
 };
 
@@ -24,17 +23,6 @@ const enthusiasm = handleActions<HelloState["hello"]["enthusiasm"]>(
   initialState.hello.enthusiasm
 );
 
-const name = handleActions(
-  {
-    [actions.UPDATE_NAME]: (
-      state,
-      { payload }: Action<HelloState["hello"]["name"]>
-    ) => payload
-  },
-  initialState.hello.name
-);
-
 export default combineReducers({
-  enthusiasm,
-  name
+  enthusiasm
 });
