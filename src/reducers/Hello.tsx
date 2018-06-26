@@ -4,23 +4,21 @@ import * as actions from "~/actions/Hello";
 import { HelloState } from "~/types/hello";
 
 const initialState: HelloState = {
-  hello: {
-    enthusiasm: 1
-  }
+  enthusiasm: 1
 };
 
-const enthusiasm = handleActions<HelloState["hello"]["enthusiasm"]>(
+const enthusiasm = handleActions<HelloState["enthusiasm"]>(
   {
     [actions.INCREMENT_ENTHUSIASM]: (
       state,
-      {  }: Action<HelloState["hello"]["enthusiasm"]>
+      {  }: Action<HelloState["enthusiasm"]>
     ) => state + 1,
     [actions.DECREMENT_ENTHUSIASM]: (
       state,
-      {  }: Action<HelloState["hello"]["enthusiasm"]>
+      {  }: Action<HelloState["enthusiasm"]>
     ) => (state - 1 < 0 ? 0 : state - 1)
   },
-  initialState.hello.enthusiasm
+  initialState.enthusiasm
 );
 
 export default combineReducers({

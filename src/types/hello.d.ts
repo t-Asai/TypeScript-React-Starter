@@ -1,5 +1,3 @@
 export type HelloState = {
-  hello: {
-    enthusiasm: number;
-  };
+  enthusiasm: number;
 };
