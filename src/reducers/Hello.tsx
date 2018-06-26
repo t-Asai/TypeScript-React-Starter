@@ -5,7 +5,7 @@ import { HelloState } from "~/types/hello";
 
 const initialState: HelloState = {
   hello: {
-    enthusiasm: 0
+    enthusiasm: 1
   }
 };
 
