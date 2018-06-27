@@ -7,6 +7,9 @@ import { createStore } from "redux";
 import "~/index.css";
 import rootReducer from "~/reducers";
 import routes from "~/routes";
+import * as firebase from "firebase/app";
+import firebaseConfig from "~/config/firebase";
+firebase.initializeApp(firebaseConfig);
 
 const store = createStore(rootReducer);
 

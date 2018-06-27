@@ -1,9 +1,12 @@
+import { bindActionCreators } from "redux";
 import { connect, Dispatch } from "react-redux";
 import Top from "~/components/Top";
+import UserActions, { UserActionsType } from "~/actions/User";
 
-export const mapStateToProps = () => ({});
+const mapStateToProps = () => ({});
 
-export const mapDispatchToProps = () => ({});
+const mapDispatchToProps = (dispatch: Dispatch<UserActionsType>) =>
+  bindActionCreators({ ...UserActions }, dispatch);
 
 export default connect(
   mapStateToProps,
