@@ -15,6 +15,7 @@ describe("reducerのテスト", () => {
     const expectedState = {
       ...initState,
       user: {
+        ...user,
         name: updateName
       }
     };
