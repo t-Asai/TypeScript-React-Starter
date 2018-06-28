@@ -6,7 +6,7 @@ import * as actions from "~/actions/User";
 
 const initialState: UserState = {
   name: "anonimous",
-  auth: ""
+  isLogin: false
 };
 
 const provider = new firebase.auth.GoogleAuthProvider();
@@ -62,31 +62,34 @@ const name = handleActions(
   initialState.name
 );
 
-const auth = handleActions(
+const isLogin = handleActions(
   {
-    [actions.SIGN_IN]: (state, { payload }: Action<UserState["auth"]>): any => {
+    [actions.SIGN_IN]: (
+      state,
+      { payload }: Action<UserState["isLogin"]>
+    ): any => {
       signIn();
-      return initialState.auth;
+      return true;
     },
     [actions.SIGN_OUT]: (
       state,
-      { payload }: Action<UserState["auth"]>
+      { payload }: Action<UserState["isLogin"]>
     ): any => {
       signOut();
-      return initialState.auth;
+      return false;
     },
     [actions.CHECK_AUTH]: (
       state,
-      { payload }: Action<UserState["auth"]>
+      { payload }: Action<UserState["isLogin"]>
     ): any => {
       console.log(firebase.auth().currentUser);
-      return initialState.auth;
+      return isLogin;
     }
   },
-  initialState.auth
+  initialState.isLogin
 );
 
 export default combineReducers({
   name,
-  auth
+  isLogin
 });
