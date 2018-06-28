@@ -4,7 +4,7 @@ import rootReducer from "~/reducers";
 const store = createStore(rootReducer);
 
 describe("reducerのテスト", () => {
-  let initState: any;
+  let initState: State;
   beforeEach(() => {
     initState = rootReducer(undefined, { type: null });
   });
