@@ -1,4 +1,4 @@
-export type UserState = {
+declare type UserState = {
   name: string;
   auth: string;
 };

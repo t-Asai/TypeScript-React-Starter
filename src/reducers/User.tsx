@@ -3,7 +3,6 @@ import { combineReducers } from "redux";
 import * as firebase from "firebase/app";
 import "firebase/auth";
 import * as actions from "~/actions/User";
-import { UserState } from "~/types/User";
 
 const initialState: UserState = {
   name: "anonimous",
