@@ -13,6 +13,12 @@ firebase.initializeApp(firebaseConfig);
 
 const store = createStore(rootReducer);
 
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("./service-worker.js").then(function() {
+    console.log("Service Worker Registered");
+  });
+}
+
 ReactDOM.render(
   <Provider store={store}>
     <Router>{renderRoutes(routes)}</Router>

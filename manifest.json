@@ -1,0 +1,15 @@
+{
+  "name": "ReactApp",
+  "short_name": "ReactApp",
+  "icons": [
+    {
+      "src": "./public/favicon.ico",
+      "sizes": "128x128",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "./public/index.html",
+  "display": "standalone",
+  "background_color": "#3E4EB8",
+  "theme_color": "#2F3BA2"
+}
