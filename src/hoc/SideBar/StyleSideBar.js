@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const side_width = "calc(7rem + 5vw)";
+const side_width = "calc(4rem + 5vw)";
 const main_width = `calc(100vw - ${side_width})`;
 
 const margin = {
@@ -16,13 +16,17 @@ export const StyleSideBar = styled.div`
   height: calc(100vh - ${margin.sidebar}rem - ${margin.sidebar}rem);
   background: rgb(256, 256, 256);
   color: rgb(0, 0, 0);
-  font-size: calc(1rem + 0.5vw);
+  font-size: calc(0.8rem + 0.3vw);
 `;
 
 export const StyleComposedComponent = styled.div`
   position: relative;
   margin-left: ${margin.main}rem;
   margin-top: ${margin.main}rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   width: calc(${main_width} - ${margin.main}rem - ${margin.main}rem);
   height: calc(100vh - ${margin.main}rem - ${margin.main}rem);
   background: rgb(256, 256, 256);
@@ -52,4 +56,6 @@ export const StyleLinkList = styled.ul`
   position: relative;
   float: left;
   text-align: left;
+  list-style: none;
+  padding-left: 1rem;
 `;
