@@ -1,5 +1,5 @@
 import * as React from "react";
-import { ConnectSideBar } from "~/hoc/SideBar";
+import { EmbedToLayout } from "~/hoc/Layout";
 
 interface Props {
   name: string;
@@ -29,4 +29,4 @@ const Hello = ({
   </div>
 );
 
-export default ConnectSideBar(Hello);
+export default EmbedToLayout(Hello);

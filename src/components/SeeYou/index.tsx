@@ -1,5 +1,5 @@
 import * as React from "react";
-import { ConnectSideBar } from "~/hoc/SideBar";
+import { EmbedToLayout } from "~/hoc/Layout";
 import { H1 } from "./StyleSeeYou";
 
 const SeeYou = () => (
@@ -9,4 +9,4 @@ const SeeYou = () => (
   </div>
 );
 
-export default ConnectSideBar(SeeYou);
+export default EmbedToLayout(SeeYou);

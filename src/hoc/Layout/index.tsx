@@ -1,5 +1,6 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
+import Header from "~/containers/Header";
 import routes from "~/routes";
 import {
   StyleLinkList,
@@ -8,6 +9,7 @@ import {
   StyleComposedComponent,
   StyleComposedComponentBuff
 } from "./StyleSideBar";
+import { HedderBuff } from "./Header";
 
 const SideBar = (): any => {
   const listItems = routes.map(route => {
@@ -25,11 +27,14 @@ const SideBar = (): any => {
   return <StyleLinkList>{listItems}</StyleLinkList>;
 };
 
-export const ConnectSideBar = (ComposedComponent: any) =>
+export const EmbedToLayout = (ComposedComponent: any) =>
   class extends React.Component {
     render() {
       return (
         <div>
+          <HedderBuff>
+            <Header />
+          </HedderBuff>
           <StyleSideBarBuff>
             <StyleSideBar>
               <SideBar />

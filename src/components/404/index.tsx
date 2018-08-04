@@ -1,5 +1,5 @@
 import * as React from "react";
-import { ConnectSideBar } from "~/hoc/SideBar";
+import { EmbedToLayout } from "~/hoc/Layout";
 import { H1 } from "./Style404";
 
 const NotFound = () => (
@@ -8,4 +8,4 @@ const NotFound = () => (
   </div>
 );
 
-export default ConnectSideBar(NotFound);
+export default EmbedToLayout(NotFound);

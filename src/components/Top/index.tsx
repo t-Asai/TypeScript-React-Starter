@@ -1,5 +1,5 @@
 import * as React from "react";
-import { ConnectSideBar } from "~/hoc/SideBar";
+import { EmbedToLayout } from "~/hoc/Layout";
 
 interface Props {
   isLogin: boolean;
@@ -20,4 +20,4 @@ const Top = ({ isLogin, signIn, signOut, checkAuth }: Props) => (
   </div>
 );
 
-export default ConnectSideBar(Top);
+export default EmbedToLayout(Top);
