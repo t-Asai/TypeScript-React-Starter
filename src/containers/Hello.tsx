@@ -1,5 +1,5 @@
 import { bindActionCreators } from "redux";
-import { connect, Dispatch } from "react-redux";
+import { connect } from "react-redux";
 import Hello from "~/components/Hello";
 import HelloActions, { HelloActionsType } from "~/actions/Hello";
 import UserActions, { UserActionsType } from "~/actions/User";
@@ -11,7 +11,7 @@ const mapStateToProps = (state: any) => ({
 });
 
 const mapDispatchToProps = (
-  dispatch: Dispatch<HelloActionsType | UserActionsType>
+  dispatch: any // DispatchProp<HelloActionsType | UserActionsType>
 ) => bindActionCreators({ ...HelloActions, ...UserActions }, dispatch);
 
 export default connect(
