@@ -4,7 +4,7 @@ import routes from "~/routes";
 import { StyleLinkList } from "./Style";
 
 const SideBar = ({ name }: any): any => {
-  const listItems = routes.map(route => {
+  const listItems = routes.map((route: any) => {
     if (route.name !== undefined) {
       return (
         <li key={route.path}>

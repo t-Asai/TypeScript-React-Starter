@@ -3,15 +3,29 @@ import { combineReducers } from "redux";
 import * as actions from "~/actions/Menu";
 
 const initialState: any = {
-  isOpen: false
+  isOpen: {
+    main: false,
+    sub: false
+  }
 };
 
-const isOpen = handleActions<any>(
+const main = handleActions<any>(
   {
-    [actions.CHANGE_MENU_IS_OPEN]: (state, {  }: Action<any>) => !state
+    [actions.CHANGE_MAIN_MENU_IS_OPEN]: (state, {  }: Action<any>) => !state
   },
-  initialState.isOpen
+  initialState.isOpen.main
 );
+const sub = handleActions<any>(
+  {
+    [actions.CHANGE_SUB_MENU_IS_OPEN]: (state, {  }: Action<any>) => !state
+  },
+  initialState.isOpen.sub
+);
+
+const isOpen = combineReducers({
+  main,
+  sub
+});
 
 export default combineReducers({
   isOpen
