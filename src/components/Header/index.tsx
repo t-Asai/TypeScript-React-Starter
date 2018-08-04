@@ -8,10 +8,18 @@ import {
 } from "reactstrap";
 import _routes from "~/routes";
 
-class CommentBox extends React.Component<any, any> {
-  constructor(props: any) {
+interface Props {
+  routes: any;
+  name?: string;
+}
+
+interface State {
+  isOpen: boolean;
+}
+
+class CommentBox extends React.Component<Props, State> {
+  constructor(props: Props) {
     super(props);
-    console.log(`props: ${props}${JSON.stringify(props)}`);
     this.state = {
       isOpen: false
     };
@@ -46,7 +54,7 @@ class CommentBox extends React.Component<any, any> {
       } else {
         return (
           <DropdownItem>
-            <li key={`${route.path}`}>
+            <li key={route.path}>
               <Link to={route.path}>{route.name}</Link>
             </li>
           </DropdownItem>
@@ -54,7 +62,7 @@ class CommentBox extends React.Component<any, any> {
       }
     });
 
-  render(): any {
+  render(): React.ReactElement<any> {
     const nextTarget = this.props.routes.find(
       (route: any) =>
         route.child !== undefined &&
@@ -62,7 +70,6 @@ class CommentBox extends React.Component<any, any> {
     );
 
     if (nextTarget !== undefined) {
-      console.log(`nextTarget is  ${JSON.stringify(nextTarget)}`);
       return (
         <div style={{ display: "inline-block" }}>
           {this.items()}
@@ -75,7 +82,7 @@ class CommentBox extends React.Component<any, any> {
   }
 }
 
-const Header = ({ routes = _routes }: any): any => (
+const Header = ({ routes = _routes }: any): React.ReactElement<any> => (
   <CommentBox routes={routes} />
 );
 

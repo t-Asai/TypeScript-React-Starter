@@ -67,14 +67,14 @@ const isLogin = handleActions(
     [actions.SIGN_IN]: (
       state,
       { payload }: Action<UserState["isLogin"]>
-    ): any => {
+    ): boolean => {
       signIn();
       return true;
     },
     [actions.SIGN_OUT]: (
       state,
       { payload }: Action<UserState["isLogin"]>
-    ): any => {
+    ): boolean => {
       signOut();
       return false;
     },

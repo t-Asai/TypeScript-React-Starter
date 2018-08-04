@@ -3,7 +3,11 @@ import { Link } from "react-router-dom";
 import routes from "~/routes";
 import { StyleLinkList } from "./Style";
 
-const SideBar = ({ name }: any): any => {
+interface Props {
+  name: string;
+}
+
+const SideBar = ({ name }: Props): React.ReactElement<string> => {
   const listItems = routes.map((route: any) => {
     if (route.name !== undefined) {
       return (

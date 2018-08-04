@@ -18,25 +18,25 @@ const routes: any = [
     child: [
       {
         path: "/hello/1",
-        name: "hello",
+        name: "hello_1",
         exact: true,
         component: Hello
       },
       {
         path: "/hello/2",
-        name: "hello",
+        name: "hello_2",
         exact: true,
         component: Hello,
         child: [
           {
             path: "/hello/2/1",
-            name: "hello",
+            name: "hello_2_1",
             exact: true,
             component: Hello
           },
           {
             path: "/hello/2/2",
-            name: "hello",
+            name: "hello_2_2",
             exact: true,
             component: Hello
           }
@@ -52,13 +52,13 @@ const routes: any = [
     child: [
       {
         path: "/seeyou/1",
-        name: "seeyou",
+        name: "seeyou_1",
         exact: true,
         component: SeeYou
       },
       {
         path: "/seeyou/2",
-        name: "seeyou",
+        name: "seeyou_2",
         exact: true,
         component: SeeYou
       }

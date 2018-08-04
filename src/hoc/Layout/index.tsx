@@ -1,5 +1,5 @@
 import * as React from "react";
-import Header from "~/containers/Header";
+import Header from "~/components/Header";
 import SideBar from "~/containers/SideBar";
 import {
   StyleSideBar,
@@ -10,7 +10,7 @@ import {
   StyleHeaderBuff
 } from "./StyleLayout";
 
-export const EmbedToLayout = (ComposedComponent: any) =>
+export const EmbedToLayout = (ComposedComponent: any): any =>
   class extends React.Component {
     render() {
       return (
