@@ -9,7 +9,7 @@ import {
 import _routes from "~/routes";
 
 interface Props {
-  routes: any;
+  routes: Routes;
   name?: string;
 }
 
@@ -17,7 +17,7 @@ interface State {
   isOpen: boolean;
 }
 
-class CommentBox extends React.Component<Props, State> {
+class RouteBox extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = {
@@ -47,8 +47,8 @@ class CommentBox extends React.Component<Props, State> {
     </Dropdown>
   );
 
-  item = (routes: any) =>
-    routes.map((route: any) => {
+  item = (routes: Routes) =>
+    routes.map((route: Route) => {
       if (route.name === undefined) {
         return null;
       } else {
@@ -62,9 +62,9 @@ class CommentBox extends React.Component<Props, State> {
       }
     });
 
-  render(): React.ReactElement<any> {
+  render(): React.ReactElement<undefined> {
     const nextTarget = this.props.routes.find(
-      (route: any) =>
+      (route: Route) =>
         route.child !== undefined &&
         window.location.pathname.match(route.path) !== null
     );
@@ -73,7 +73,7 @@ class CommentBox extends React.Component<Props, State> {
       return (
         <div style={{ display: "inline-block" }}>
           {this.items()}
-          <CommentBox routes={nextTarget.child} name={nextTarget.name} />
+          <RouteBox routes={nextTarget.child} name={nextTarget.name} />
         </div>
       );
     } else {
@@ -82,8 +82,8 @@ class CommentBox extends React.Component<Props, State> {
   }
 }
 
-const Header = ({ routes = _routes }: any): React.ReactElement<any> => (
-  <CommentBox routes={routes} />
+const Header = ({ routes = _routes }: { routes?: Routes }): React.ReactElement<Routes> => (
+  <RouteBox routes={routes} />
 );
 
 export default Header;

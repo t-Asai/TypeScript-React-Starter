@@ -10,7 +10,7 @@ import {
   StyleHeaderBuff
 } from "./StyleLayout";
 
-export const EmbedToLayout = (ComposedComponent: any): any =>
+export const EmbedToLayout = (ComposedComponent: any): React.ComponentClass =>
   class extends React.Component {
     render() {
       return (
