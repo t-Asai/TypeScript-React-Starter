@@ -17,7 +17,7 @@ const routes: Routes = [
     component: Hello,
     child: [
       {
-        path: "hello/template",
+        path: "/hello/template",
         name: "template",
         exact: true,
         component: Hello,
