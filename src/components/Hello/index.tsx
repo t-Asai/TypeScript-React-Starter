@@ -76,41 +76,6 @@ const Hello = ({
       <button onClick={incrementEnthusiasm}>+</button>
       <textarea onChange={event => updateName(event.target.value)} />
     </div>
-    <div>
-      <button onClick={decrementEnthusiasm}>-</button>
-      <button onClick={incrementEnthusiasm}>+</button>
-      <textarea onChange={event => updateName(event.target.value)} />
-    </div>
-    <div>
-      <button onClick={decrementEnthusiasm}>-</button>
-      <button onClick={incrementEnthusiasm}>+</button>
-      <textarea onChange={event => updateName(event.target.value)} />
-    </div>
-    <div>
-      <button onClick={decrementEnthusiasm}>-</button>
-      <button onClick={incrementEnthusiasm}>+</button>
-      <textarea onChange={event => updateName(event.target.value)} />
-    </div>
-    <div>
-      <button onClick={decrementEnthusiasm}>-</button>
-      <button onClick={incrementEnthusiasm}>+</button>
-      <textarea onChange={event => updateName(event.target.value)} />
-    </div>
-    <div>
-      <button onClick={decrementEnthusiasm}>-</button>
-      <button onClick={incrementEnthusiasm}>+</button>
-      <textarea onChange={event => updateName(event.target.value)} />
-    </div>
-    <div>
-      <button onClick={decrementEnthusiasm}>-</button>
-      <button onClick={incrementEnthusiasm}>+</button>
-      <textarea onChange={event => updateName(event.target.value)} />
-    </div>
-    <div>
-      <button onClick={decrementEnthusiasm}>-</button>
-      <button onClick={incrementEnthusiasm}>+</button>
-      <textarea onChange={event => updateName(event.target.value)} />
-    </div>
   </div>
 );
 

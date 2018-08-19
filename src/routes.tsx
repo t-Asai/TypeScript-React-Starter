@@ -20,7 +20,13 @@ const routes: Routes = [
         path: "/hello/template",
         name: "template",
         exact: true,
-        component: Hello,
+        component: Hello
+      },
+      {
+        path: "/hello/template2",
+        name: "template2",
+        exact: true,
+        component: Hello
       }
     ]
   },
