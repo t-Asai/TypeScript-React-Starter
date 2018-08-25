@@ -3,22 +3,35 @@ import "colors";
 import * as jsdiff from "diff";
 import { EmbedToLayout } from "~/hoc/Layout";
 
+interface Props {
+  baseText: string;
+  nextText: string;
+  updateBaseText: (text: string) => void;
+  updateNextText: (text: string) => void;
+}
+
+interface DiffString {
+  color: string;
+  text: string;
+}
+
 const TextDiff = ({
   baseText,
   nextText,
   updateBaseText,
   updateNextText
-}: any) => {
+}: Props) => {
   const diffText = jsdiff.diffChars(baseText, nextText);
-  let color;
-  let spans: any = [];
+
+  let diffStringArray: Array<DiffString> = [];
 
   diffText.forEach((part: any) => {
-    color = part.added ? "blue" : part.removed ? "red" : "grey";
-    spans.push({ color: color, text: part.value });
+    const color = part.added ? "blue" : part.removed ? "red" : "grey";
+    diffStringArray.push({ color: color, text: part.value });
   });
-  const listItems = spans.map((span: any) => (
-    <p style={{ color: span.color, display: "inline" }}>{`${span.text}`}</p>
+
+  const diffString = diffStringArray.map((item: DiffString) => (
+    <p style={{ color: item.color, display: "inline" }}>{`${item.text}`}</p>
   ));
 
   return (
@@ -28,7 +41,7 @@ const TextDiff = ({
 
       <textarea onChange={event => updateBaseText(event.target.value)} />
       <textarea onChange={event => updateNextText(event.target.value)} />
-      <div>{listItems}</div>
+      <div>{diffString}</div>
     </div>
   );
 };
