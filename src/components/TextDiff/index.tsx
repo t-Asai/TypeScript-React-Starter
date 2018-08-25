@@ -18,17 +18,17 @@ const TextDiff = ({
     spans.push({ color: color, text: part.value });
   });
   const listItems = spans.map((span: any) => (
-    <p style={{ color: span.color }}>{`${span.text}`}</p>
+    <p style={{ color: span.color, display: "inline" }}>{`${span.text}`}</p>
   ));
 
   return (
     <div>
       <div>{`${baseText}`}</div>
       <div>{`${nextText}`}</div>
-      {listItems}
 
       <textarea onChange={event => updateBaseText(event.target.value)} />
       <textarea onChange={event => updateNextText(event.target.value)} />
+      <div>{listItems}</div>
     </div>
   );
 };
