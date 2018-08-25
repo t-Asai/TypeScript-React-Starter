@@ -1,5 +1,6 @@
 import Top from "~/containers/Top";
 import Hello from "~/containers/Hello";
+import TextDiff from "~/containers/TextDiff";
 import SeeYou from "~/containers/SeeYou";
 import NotFound from "~/components/404";
 
@@ -34,6 +35,12 @@ const routes: Routes = [
     path: "/hello/:id",
     exact: true,
     component: Hello
+  },
+  {
+    path: "/textdiff",
+    name: "textdiff",
+    exact: true,
+    component: TextDiff
   },
   {
     path: "/seeyou",
