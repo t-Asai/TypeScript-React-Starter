@@ -31,7 +31,12 @@ const TextDiff = ({
   });
 
   const diffString = diffStringArray.map((item: DiffString) => (
-    <p style={{ color: item.color, display: "inline" }}>{`${item.text}`}</p>
+    <p
+      style={{ color: item.color, display: "inline" }}
+      key={`${item.text}${Math.random()}`}
+    >
+      {`${item.text}`}
+    </p>
   ));
 
   return (
