@@ -2,6 +2,7 @@ import * as React from "react";
 import "colors";
 import * as jsdiff from "diff";
 import { EmbedToLayout } from "~/hoc/Layout";
+import Thumbnail from "~/assets/Thumbnail";
 
 interface Props {
   baseText: string;
@@ -41,6 +42,7 @@ const TextDiff = ({
 
   return (
     <div>
+      <Thumbnail page={baseText} />
       <div>{`${baseText}`}</div>
       <div>{`${nextText}`}</div>
 
